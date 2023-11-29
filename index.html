@@ -18,51 +18,35 @@ id="scene">
         
          <a-asset-item id="modelo" src="pay.glb"></a-asset-item>
           <a-asset-item id="modelo1" src="rol.glb"></a-asset-item>
-        
         <a-asset-item id="modelo2" src="magnum.glb"></a-asset-item>
-     <a-asset-item id="modelo3" src="cupcake.glb"></a-asset-item>
+    
 
 	      <audio id="sound" src="pay.mp3" preload="auto"></audio>
 	<audio id="sound1" src="rol.mp3" preload="auto"></audio>
 	      <audio id="sound2" src="magnum.mp3" preload="auto"></audio>
-	      <audio id="sound3" src="Cupcakes.mp3" preload="auto"></audio>
       
       
       </a-assets>
 		
       
 		
-			<a-marker id="pay" type="barcode" value="25" raycaster="objects: .clickable" emitevents="true"
- cursor="fuse: false; rayOrigin: mouse;">
-			
-		
+			<a-marker id="pay" type="barcode" value="25" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 			<a-entity gltf-model="#modelo" scale="25 25 25" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
-			
 			</a-marker>
-      
-			<a-marker id="rol" type="barcode" value="20" raycaster="objects: .clickable" emitevents="true"
- cursor="fuse: false; rayOrigin: mouse;">
-				
+
+
+			
+			<a-marker id="rol" type="barcode" value="20" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">	
 			<a-entity gltf-model="#modelo1" scale="20 20 20" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
-			
 			</a-marker>
-      
-      <a-marker id="magnum" type="barcode" value="8" raycaster="objects: .clickable" emitevents="true"
- cursor="fuse: false; rayOrigin: mouse;">
+
+
 			
-					
+                        <a-marker id="magnum" type="barcode" value="8" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">		
 			<a-entity gltf-model="#modelo2" scale="0.5 0.5 0.5" class="clickable" gesture-handler soundhandler></a-entity>
-			
 			</a-marker>
-      
-      <a-marker id="cupcake" type="barcode" value="18" raycaster="objects: .clickable" emitevents="true"
- cursor="fuse: false; rayOrigin: mouse;">
+
 			
-					
-			<a-entity gltf-model="#modelo3" scale="70 70 70" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
-        
-			
-			</a-marker>
 			
 			<a-entity id="audio1" sound="src: #sound" autoplay="false"></a-entity>
 			<a-entity id="audio2" sound="src: #sound1" autoplay="false"></a-entity>
