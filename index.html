@@ -42,7 +42,6 @@
 				<a-entity id="audio1" sound="src: #sound" autoplay="false"></a-entity>
 				<a-entity id="audio2" sound="src: #sound1" autoplay="false"></a-entity>
 				<a-entity id="audio3" sound="src: #sound2" autoplay="false"></a-entity>
-				<a-entity id="audio4" sound="src: #sound3" autoplay="false"></a-entity>
 				<a-entity camera></a-entity>
 				
 		</a-scene>
@@ -53,28 +52,23 @@
 			var entity = document.querySelector('#audio1');
 			var entity2 = document.querySelector('#audio2');
 			var entity3 = document.querySelector('#audio3');
-			var entity4 = document.querySelector('#audio4');
-			
 			
 			
 			if (document.querySelector('#pay').object3D.visible == true) {
 			entity2.components.sound.pauseSound();
 			entity3.components.sound.pauseSound();
-			entity4.components.sound.pauseSound();
 			entity.components.sound.playSound();
 			
 			} 
 			else if (document.querySelector('#rol').object3D.visible == true) {
 			entity.components.sound.pauseSound();
 			entity3.components.sound.pauseSound();
-			entity4.components.sound.pauseSound();
 			entity2.components.sound.playSound();
 			
 			}
 			else if (document.querySelector('#magnum').object3D.visible == true) {
 			entity2.components.sound.pauseSound();
 			entity.components.sound.pauseSound();
-			entity4.components.sound.pauseSound();
 			entity3.components.sound.playSound();
 			
 			}
@@ -82,7 +76,6 @@
 			entity2.components.sound.pauseSound();
 			entity.components.sound.pauseSound();
 			entity3.components.sound.pauseSound();
-			entity4.components.sound.playSound();
 			
 			}
 			
