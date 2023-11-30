@@ -23,7 +23,7 @@ id="scene">
 	        <audio id="sound" src="alambre.mp3" preload="auto"></audio>
 		<audio id="sound1" src="gas.mp3" preload="auto"></audio>
 	        <audio id="sound2" src="electrodo.mp3" preload="auto"></audio>
-	        <audio id="sound3" src="" preload="auto"></audio>
+	        <audio id="sound3" src="soldadura" preload="auto"></audio>
       </a-assets>
 		
       
@@ -46,7 +46,7 @@ id="scene">
 			</a-marker>
 
 			
-      			<a-marker id="" type="barcode" value="" raycaster="objects: .clickable" emitevents="true"
+      			<a-marker id="soldadura" type="barcode" value="4" raycaster="objects: .clickable" emitevents="true"
  cursor="fuse: false; rayOrigin: mouse;">		
 			<a-entity gltf-model="#modelo3" scale="70 70 70" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
 			</a-marker>
@@ -56,7 +56,7 @@ id="scene">
 			<a-entity id="audio1" sound="src: #sound" autoplay="false"></a-entity>
 			<a-entity id="audio2" sound="src: #sound1" autoplay="false"></a-entity>
 			<a-entity id="audio3" sound="src: #sound2" autoplay="false"></a-entity>
-			<a-entity id="" sound="src: #" autoplay="false"></a-entity>
+			<a-entity id="audio4" sound="src: #sound3" autoplay="false"></a-entity>
 			<a-entity camera></a-entity>
 			
 		</a-scene>
@@ -70,28 +70,28 @@ var entity4 = document.querySelector('#audio4');
 
 
 
-if (document.querySelector('#pay').object3D.visible == true) {
+if (document.querySelector('#alambre').object3D.visible == true) {
 entity2.components.sound.pauseSound();
 entity3.components.sound.pauseSound();
 entity4.components.sound.pauseSound();
 entity.components.sound.playSound();
 
 } 
-else if (document.querySelector('#rol').object3D.visible == true) {
+else if (document.querySelector('#gas').object3D.visible == true) {
 entity.components.sound.pauseSound();
 entity3.components.sound.pauseSound();
 entity4.components.sound.pauseSound();
 entity2.components.sound.playSound();
 
 }
-else if (document.querySelector('#magnum').object3D.visible == true) {
+else if (document.querySelector('#electrodo').object3D.visible == true) {
 entity2.components.sound.pauseSound();
 entity.components.sound.pauseSound();
 entity4.components.sound.pauseSound();
 entity3.components.sound.playSound();
 
 }
-else if (document.querySelector('#cupcake').object3D.visible == true) {
+else if (document.querySelector('#soldadura').object3D.visible == true) {
 entity2.components.sound.pauseSound();
 entity.components.sound.pauseSound();
 entity3.components.sound.pauseSound();
