@@ -8,84 +8,105 @@
 		<script src="gesture-detector.js"></script>
 		<script src="gesture-handler.js"></script>
 	</head>
+	
 	<body style="margin : 0px; overflow: hidden">
-		
+	
 		<a-scene embedded arjs="sourceType: webcam; debugUIEnabled:false; detectionMode: mono_and_matrix; matrixCodeType: 3x3"renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector 
-	                id="scene">
-	      	
-		      <a-assets>
-		               <a-asset-item id="modelo" src="alambre.glb"></a-asset-item>
-		               <a-asset-item id="modelo1" src="gas.glb"></a-asset-item>
-		               <a-asset-item id="modelo2" src="electrodo.glb"></a-asset-item>
-		    
+id="scene">
+      	
+      <a-assets>
+         	<a-asset-item id="modelo" src="alambre.glb"></a-asset-item>
+          	<a-asset-item id="modelo1" src="gas.glb"></a-asset-item>
+        	<a-asset-item id="modelo2" src="electrodo.glb"></a-asset-item>
+     		<a-asset-item id="modelo3" src=""></a-asset-item>
+
+	        <audio id="sound" src="alambre.mp3" preload="auto"></audio>
+		<audio id="sound1" src="gas.mp3" preload="auto"></audio>
+	        <audio id="sound2" src="electrodo.mp3" preload="auto"></audio>
+	        <audio id="sound3" src="" preload="auto"></audio>
+      </a-assets>
 		
-			        <audio id="sound" src="audio1.mp3" preload="auto"></audio>
-				<audio id="sound1" src="audio2.mp3" preload="auto"></audio>
-			        <audio id="sound2" src="audio3.mp3" preload="auto"></audio>
-		      
-		      </a-assets>
+      
+		
+			<a-marker id="alambre" type="barcode" value="1" raycaster="objects: .clickable" emitevents="true"
+ cursor="fuse: false; rayOrigin: mouse;">
+			<a-entity gltf-model="#modelo" scale="25 25 25" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
+			</a-marker>
+
 			
-				<a-marker id="alambre" type="barcode" value="1" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-				<a-entity gltf-model="#modelo" scale="25 25 25" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
-				</a-marker>
-	
-				<a-marker id="gas" type="barcode" value="2" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">	
-				<a-entity gltf-model="#modelo1" scale="20 20 20" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
-				</a-marker>
-	
-	                        <a-marker id="electrodo" type="barcode" value="3" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">		
-				<a-entity gltf-model="#modelo2" scale="0.5 0.5 0.5" class="clickable" gesture-handler soundhandler></a-entity>
-				</a-marker>
-	
-				
-				
-				<a-entity id="audio1" sound="src: #sound" autoplay="false"></a-entity>
-				<a-entity id="audio2" sound="src: #sound1" autoplay="false"></a-entity>
-				<a-entity id="audio3" sound="src: #sound2" autoplay="false"></a-entity>
-				<a-entity camera></a-entity>
-				
+			<a-marker id="gas" type="barcode" value="2" raycaster="objects: .clickable" emitevents="true"
+ cursor="fuse: false; rayOrigin: mouse;">	
+			<a-entity gltf-model="#modelo1" scale="20 20 20" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
+			</a-marker>
+
+			
+      			<a-marker id="electrodo" type="barcode" value="3" raycaster="objects: .clickable" emitevents="true"
+ cursor="fuse: false; rayOrigin: mouse;">		
+			<a-entity gltf-model="#modelo2" scale="0.5 0.5 0.5" class="clickable" gesture-handler soundhandler></a-entity>
+			</a-marker>
+
+			
+      			<a-marker id="" type="barcode" value="" raycaster="objects: .clickable" emitevents="true"
+ cursor="fuse: false; rayOrigin: mouse;">		
+			<a-entity gltf-model="#modelo3" scale="70 70 70" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
+			</a-marker>
+
+
+			
+			<a-entity id="audio1" sound="src: #sound" autoplay="false"></a-entity>
+			<a-entity id="audio2" sound="src: #sound1" autoplay="false"></a-entity>
+			<a-entity id="audio3" sound="src: #sound2" autoplay="false"></a-entity>
+			<a-entity id="" sound="src: #" autoplay="false"></a-entity>
+			<a-entity camera></a-entity>
+			
 		</a-scene>
-			
 		<script>
-			AFRAME.registerComponent('soundhandler', {
-			tick: function () {
-			var entity = document.querySelector('#audio1');
-			var entity2 = document.querySelector('#audio2');
-			var entity3 = document.querySelector('#audio3');
-			
-			
-			if (document.querySelector('#alambre').object3D.visible == true) {
-			entity2.components.sound.pauseSound();
-			entity3.components.sound.pauseSound();
-			entity.components.sound.playSound();
-			
-			} 
-			else if (document.querySelector('#gas').object3D.visible == true) {
-			entity.components.sound.pauseSound();
-			entity3.components.sound.pauseSound();
-			entity2.components.sound.playSound();
-			
-			}
-			else if (document.querySelector('#magnum').object3D.visible == true) {
-			entity2.components.sound.pauseSound();
-			entity.components.sound.pauseSound();
-			entity3.components.sound.playSound();
-			
-			}
-			else if (document.querySelector('#electrodo').object3D.visible == true) {
-			entity2.components.sound.pauseSound();
-			entity.components.sound.pauseSound();
-			entity3.components.sound.pauseSound();
-			
-			}
-			
-			else{
-			entity.components.sound.pauseSound();
-			entity2.components.sound.pauseSound();
-			entity3.components.sound.pauseSound();
-			 }
-			}
-			});
-		</script>
+AFRAME.registerComponent('soundhandler', {
+tick: function () {
+var entity = document.querySelector('#audio1');
+var entity2 = document.querySelector('#audio2');
+var entity3 = document.querySelector('#audio3');
+var entity4 = document.querySelector('#audio4');
+
+
+
+if (document.querySelector('#pay').object3D.visible == true) {
+entity2.components.sound.pauseSound();
+entity3.components.sound.pauseSound();
+entity4.components.sound.pauseSound();
+entity.components.sound.playSound();
+
+} 
+else if (document.querySelector('#rol').object3D.visible == true) {
+entity.components.sound.pauseSound();
+entity3.components.sound.pauseSound();
+entity4.components.sound.pauseSound();
+entity2.components.sound.playSound();
+
+}
+else if (document.querySelector('#magnum').object3D.visible == true) {
+entity2.components.sound.pauseSound();
+entity.components.sound.pauseSound();
+entity4.components.sound.pauseSound();
+entity3.components.sound.playSound();
+
+}
+else if (document.querySelector('#cupcake').object3D.visible == true) {
+entity2.components.sound.pauseSound();
+entity.components.sound.pauseSound();
+entity3.components.sound.pauseSound();
+entity4.components.sound.playSound();
+
+}
+
+else{
+entity.components.sound.pauseSound();
+entity2.components.sound.pauseSound();
+entity3.components.sound.pauseSound();
+entity4.components.sound.pauseSound();
+ }
+}
+});
+</script>
 	</body>
 </html>
