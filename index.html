@@ -16,9 +16,9 @@ id="scene">
 	          	<a-asset-item id="modelo1" src="gas.glb"></a-asset-item>
 	        	<a-asset-item id="modelo2" src="electrodo.glb"></a-asset-item>
 	
-		        <audio id="sound" src="alambre.mp3" preload="auto"></audio>
-			<audio id="sound1" src="gas.mp3" preload="auto"></audio>
-		        <audio id="sound2" src="electrodo.mp3" preload="auto"></audio>
+		        <audio id="sound" src="audo1.mp3" preload="auto"></audio>
+			<audio id="sound1" src="audio2.mp3" preload="auto"></audio>
+		        <audio id="sound2" src="audio3.mp3" preload="auto"></audio>
       		</a-assets>
 
 			<a-marker id="alambre" type="barcode" value="1" raycaster="objects: .clickable" emitevents="true"
@@ -37,5 +37,10 @@ id="scene">
  cursor="fuse: false; rayOrigin: mouse;">		
 			<a-entity gltf-model="#modelo2" scale="0.5 0.5 0.5" class="clickable" gesture-handler soundhandler></a-entity>
 			</a-marker>
+
+
+			<a-entity id="audio1" sound="src: #sound" autoplay="false"></a-entity>
+			<a-entity id="audio2" sound="src: #sound1" autoplay="false"></a-entity>
+			<a-entity id="audio3" sound="src: #sound2" autoplay="false"></a-entity>
 	</body>
 </html>
