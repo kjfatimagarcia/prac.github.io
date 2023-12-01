@@ -9,6 +9,16 @@
 		<script src="gesture-handler.js"></script>
 	</head>
 	<body style="margin : 0px; overflow: hidden">
-		
+		<a-scene embedded arjs="sourceType: webcam; debugUIEnabled:false; detectionMode: mono_and_matrix; matrixCodeType: 3x3"renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector 
+id="scene">
+		 <a-assets>
+	         	<a-asset-item id="modelo" src="alambre.glb"></a-asset-item>
+	          	<a-asset-item id="modelo1" src="gas.glb"></a-asset-item>
+	        	<a-asset-item id="modelo2" src="electrodo.glb"></a-asset-item>
+	
+		        <audio id="sound" src="alambre.mp3" preload="auto"></audio>
+			<audio id="sound1" src="gas.mp3" preload="auto"></audio>
+		        <audio id="sound2" src="electrodo.mp3" preload="auto"></audio>
+      		</a-assets>
 	</body>
 </html>
