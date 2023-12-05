@@ -14,7 +14,7 @@ id="scene">
 		 <a-assets>
 	         	<a-asset-item id="modelo" src="alambre.glb"></a-asset-item>
 	          	<a-asset-item id="modelo1" src="gas.glb"></a-asset-item>
-	        	<a-asset-item id="modelo2" src="Careta_FNGR.obj"></a-asset-item>
+	        	<a-asset-item id="modelo2" src="electrodo.glb"></a-asset-item>
 	
 		        <audio id="sound" src="audo1.mp3" preload="auto"></audio>
 			<audio id="sound1" src="audio2.mp3" preload="auto"></audio>
@@ -29,7 +29,7 @@ id="scene">
 			
 			<a-marker id="gas" type="barcode" value="2" raycaster="objects: .clickable" emitevents="true"
  cursor="fuse: false; rayOrigin: mouse;">	
-			<a-entity gltf-model="#modelo1" scale="5 5 5" rotation="-90 0 0" class="clickable" gesture-handler soundhandler></a-entity>
+			<a-entity gltf-model="#modelo1" scale="5 5 5" rotation="-90 0 0" position="0 0 0" class="clickable" gesture-handler soundhandler></a-entity>
 			</a-marker>
 
 			
