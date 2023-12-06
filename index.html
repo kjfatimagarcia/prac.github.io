@@ -14,7 +14,7 @@ id="scene">
 		 <a-assets>
 	         	<a-asset-item id="modelo" src="alambre.glb"></a-asset-item>
 	          	<a-asset-item id="modelo1" src="gas.glb"></a-asset-item>
-	        	<a-asset-item id="modelo2" src="electrodo.glb"></a-asset-item>
+	        	<a-asset-item id="modelo2" src="Careta_FNGR.obj"></a-asset-item>
 	
 		        <audio id="sound" src="audo1.mp3" preload="auto"></audio>
 			<audio id="sound1" src="audio2.mp3" preload="auto"></audio>
@@ -33,7 +33,7 @@ id="scene">
 			</a-marker>
 
 			
-      			<a-marker id="electrodo" type="barcode" value="3" raycaster="objects: .clickable" emitevents="true"
+      			<a-marker id="Careta_FNGR" type="barcode" value="3" raycaster="objects: .clickable" emitevents="true"
  cursor="fuse: false; rayOrigin: mouse;">		
 			<a-entity gltf-model="#modelo2" scale="-50 -50 -50" position="0 0 0" class="clickable" gesture-handler soundhandler></a-entity>
 			</a-marker>
@@ -65,7 +65,7 @@ id="scene">
 			entity2.components.sound.playSound();
 			
 			}
-			else if (document.querySelector('#electrodo').object3D.visible == true) {
+			else if (document.querySelector('#Careta_FNGR').object3D.visible == true) {
 			entity2.components.sound.pauseSound();
 			entity.components.sound.pauseSound();
 			entity3.components.sound.playSound();
